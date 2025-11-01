@@ -145,6 +145,22 @@ section h2 {
   outline-offset: 2px;
 }
 
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .produto:hover {
+    transform: none;
+  }
+  
+  .produto:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  .btn-entra:active {
+    transform: scale(0.95);
+  }
+}
+
 .produto img {
   width: 100%;
   height: 200px;
@@ -249,14 +265,50 @@ footer {
   margin-top: 2rem;
 }
 
-/* Responsividade */
+/* Responsividade Melhorada */
+
+/* Tablets grandes e laptops pequenos */
+@media (max-width: 1024px) {
+  .cards {
+    gap: 1.2rem;
+  }
+  
+  .produto {
+    max-width: 280px;
+  }
+  
+  .comentarios {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
+  header {
+    padding: 1.8rem 1rem;
+  }
+  
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   header p {
     font-size: 1rem;
+  }
+  
+  .btn-entra {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+  
+  .black-friday-banner {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .black-friday-banner strong {
+    font-size: 1.1rem;
   }
   
   section {
@@ -264,18 +316,19 @@ footer {
   }
   
   section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   
   .cards {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    justify-items: center;
   }
   
   .produto {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
   }
   
   .comentarios {
@@ -288,16 +341,124 @@ footer {
   }
 }
 
+/* Smartphones grandes */
+@media (max-width: 580px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .produto {
+    max-width: 400px;
+  }
+  
+  .black-friday-banner {
+    padding: 1rem 0.8rem;
+  }
+  
+  .black-friday-banner .cta {
+    margin-top: 0.8rem;
+  }
+}
+
+/* Smartphones pequenos */
 @media (max-width: 480px) {
   header {
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 0.8rem;
   }
   
   header h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+  
+  header p {
+    font-size: 0.95rem;
+    margin: 0.8rem 0 0;
+  }
+  
+  .btn-entra {
+    font-size: 1rem;
+    padding: 9px 18px;
+    margin-top: 0.8rem;
+  }
+  
+  .black-friday-banner {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .black-friday-banner strong {
+    font-size: 1rem;
   }
   
   section {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.8rem;
+  }
+  
+  section h2 {
+    font-size: 1.4rem;
+  }
+  
+  .sobre p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .produto {
+    max-width: 100%;
+  }
+  
+  .produto h3 {
+    font-size: 1.1rem;
+    padding: 0 0.8rem;
+  }
+  
+  .produto p {
+    font-size: 0.9rem;
+    padding: 0 0.8rem;
+  }
+  
+  .cliente {
+    padding: 1rem;
+  }
+  
+  .contato li {
+    font-size: 1rem;
+    margin: 0.8rem 0;
+  }
+  
+  footer {
+    padding: 1.2rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Smartphones muito pequenos */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+  
+  header p {
+    font-size: 0.9rem;
+  }
+  
+  .btn-entra {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+  
+  section {
+    padding: 0.8rem 0.6rem;
+  }
+  
+  section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .black-friday-banner {
+    padding: 0.7rem 0.4rem;
+    font-size: 0.85rem;
   }
 }
